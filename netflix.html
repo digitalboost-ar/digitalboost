@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Premium</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body {
+    background: #0f0f0f;
+    color: #ffffff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #e50914, #8b0000);
+    padding: 60px 20px;
+}
+
+.hero img {
+    max-width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.6);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffb3b3;
+}
+
+/* CARDS */
+.card-custom {
+    background: #181818;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(0,0,0,.4);
+}
+
+/* BUTTON */
+.btn-buy {
+    background: linear-gradient(135deg, #ff2a2a, #e50914);
+    color: #fff;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+}
+.btn-buy:hover {
+    opacity: .9;
+}
+
+/* BADGES */
+.badge-custom {
+    background: #1f1f1f;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: .9rem;
+}
+
+/* GALLERY */
+.gallery img {
+    width: 100%;
+    border-radius: 14px;
+    transition: transform .3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: #0b0b0b;
+    color: #aaa;
+    font-size: .85rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero text-center text-lg-start">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h1 class="fw-bold">Netflix Premium</h1>
+                <h4 class="mb-3">Acceso Digital</h4>
+
+                <p class="opacity-75">
+                    Disfrutá de las mejores películas, series y documentales
+                    en alta calidad desde cualquier dispositivo.
+                </p>
+
+                <div class="price mb-3">$ 3.000 ARS</div>
+
+<a href="pago.html"
+   class="btn btn-buy"
+   onclick="localStorage.setItem('producto','Netflix'); localStorage.setItem('precio','3.000')">
+   Adquirir ahora
+</a>
+
+
+
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <div class="badge-custom"><i class="bi bi-shield-check"></i> Acceso Garantizado</div>
+                    <div class="badge-custom"><i class="bi bi-phone"></i> TV • PC • Celular</div>
+                    <div class="badge-custom"><i class="bi bi-lightning"></i> Activación Rápida</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <img src="https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png?w=700&h=456" alt="Netflix Premium">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DETAILS -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-custom p-4 h-100">
+                    <h5><i class="bi bi-check-circle text-danger"></i> Características</h5>
+                    <ul class="mt-3 opacity-75">
+                        <li>✔ Acceso a todo el catálogo</li>
+                        <li>✔ Series y películas originales</li>
+                        <li>✔ Calidad HD / Full HD / 4K*</li>
+                        <li>✔ Múltiples dispositivos</li>
+                        <li>✔ Sin publicidad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-custom p-4 h-100">
+                    <h5><i class="bi bi-info-circle text-primary"></i> Información Importante</h5>
+                    <p class="opacity-75 mt-3">
+                        Acceso digital a Netflix Premium.
+                        La modalidad de activación puede variar según disponibilidad
+                        (perfil, cuenta compartida o activación asistida).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <h4 class="text-center mb-4">Contenido Destacado</h4>
+
+        <div class="row g-3 gallery">
+            <div class="col-6 col-md-4">
+                <img src="https://www.fueradehora.com.ar/wp-content/uploads/2020/10/netflix-logo.png">
+            </div>
+            <div class="col-6 col-md-4">
+                <img src="https://media.biobiochile.cl/wp-content/uploads/2026/01/la-furia-del-upside-down_-reportan-caida-global-de-netflix-tras-estreno-del-final-de-stranger-things.jpg">
+            </div>
+            <div class="col-6 col-md-4">
+                <img src="https://play-lh.googleusercontent.com/eU_jdxjpI-vuczu_CcBMGk-2YIZZH1E9rr1Jt4vkxtCQbds6GmvihFOtQMVc99wUIA=w526-h296-rw">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+    <div class="container">
+        <p class="mb-1">© 2026 • Venta Digital de Accesos</p>
+        <p class="opacity-50">Netflix es una marca registrada de Netflix, Inc.</p>
+    </div>
+</footer>
+
+</body>
+</html>
